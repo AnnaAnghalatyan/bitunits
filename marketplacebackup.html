@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+    <style type="text/css">/* Chart.js */
+    @keyframes chartjs-render-animation {
+        from {
+            opacity: .99
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    .chartjs-render-monitor {
+        animation: chartjs-render-animation 1ms
+    }
+
+    .chartjs-size-monitor, .chartjs-size-monitor-expand, .chartjs-size-monitor-shrink {
+        position: absolute;
+        direction: ltr;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        z-index: -1
+    }
+
+    .chartjs-size-monitor-expand > div {
+        position: absolute;
+        width: 1000000px;
+        height: 1000000px;
+        left: 0;
+        top: 0
+    }
+
+    .chartjs-size-monitor-shrink > div {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        left: 0;
+        top: 0
+    }</style>
+</head>
+<body>
+<div class="pl-4 pr-4">
+    <nav class="navbar nav-lighter navbar-expand-lg navbar-light justify-content-between ">
+        <a class="navbar-brand" href="index.html"><img src="img/logo-light.svg" alt="logo"></a>
+        <button style="border: none" class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars" style="color: #000;"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="my-2 my-lg-0 d-flex">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="marketplace.html">Marketplace <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <button class="auth-btn auth-light">Login</button>
+                        <button class="auth-btn auth-light">Sign up</button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+<div class="back-btn">
+    <div class="container">
+        <a href="index.html">
+            <img src="img/arrow.svg">
+            Back
+
+        </a>
+    </div>
+</div>
+
+<section class="carousel-section">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="props-block">
+                    <h2 class="block-heading">
+                        Property selling
+                    </h2>
+                    <div class="block-desc">
+                        We build complete front-end and back-end solutions using Python, Django, React and related
+                        frameworks.
+                    </div>
+                    <div class="block-sm">
+                        <div class="block-heading-sm">
+                            Token property
+                        </div>
+                        <div class="token-props-list">
+                            <div class="prop-item">
+                                <span class="t-name">Total size:</span>
+                                <span class="t-value">$22,000,000</span>
+                            </div>
+                            <div class="prop-item">
+                                <span class="t-name">Offering price:</span>
+                                <span class="t-value">$1000</span>
+                            </div>
+                            <div class="prop-item">
+                                <span class="t-name">Token outstanding:</span>
+                                <span class="t-value"> 22,000</span>
+                            </div>
+                            <div class="prop-item">
+                                <span class="t-name">Property type:</span>
+                                <span class="t-value"> Industrial</span>
+                            </div>
+                            <div class="prop-item">
+                                <span class="t-name">Building class:</span>
+                                <span class="t-value"> B</span>
+                            </div>
+                            <div class="prop-item">
+                                <span class="t-name">Lot size:</span>
+                                <span class="t-value"> 0.59 AC</span>
+                            </div>
+                            <div class="prop-item">
+                                <span class="t-name">Rentable building area:</span>
+                                <span class="t-value"> 25,700 SF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="carousel-container">
+                    <div class="owl-carousel">
+                        <div class="c-item">
+                            <img src="img/carousel-img-1.jpg">
+                        </div>
+                        <div class="c-item">
+                            <img src="img/carousel-img-2.png">
+                        </div>
+                        <div class="c-item">
+                            <img src="img/carousel-img-1.jpg">
+                        </div>
+                        <div class="c-item">
+                            <img src="img/carousel-img-2.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block-heading-sm mt-5">
+            Token amount
+        </div>
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+                <div class="graph-block">
+                    <div >
+                        <canvas id="canvas" style="display: block; width: 347px; height: 173px;" width="347"
+                                height="173" class="chartjs-render-monitor"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-lg-0 mt-4">
+                <div class="block-heading block-before-off">
+                    Don’t wait any longer
+                </div>
+                <div class="block-desc">
+                    Our identification process will take 5 minutes and then take you to our marketplace.
+                </div>
+                <button class="buy-btn">
+                    Buy it
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="footer-col">
+                    <div class="line">
+                        Address
+                    </div>
+                    <div>
+                        55 Wall Street
+                        Suite №708
+                        New York, New York 10005
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer-col">
+                    <div class="line">
+                        <i class="fas fa-phone"></i> (212) 777-3322
+
+                    </div>
+                    <div class="line">
+                        <i class="fas fa-envelope"></i> info@bitunits.com
+
+                    </div>
+                    <div class="line">
+                        <div class="social">
+                            <a href="#"><i class="fab fa-facebook-f"></i> </a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 d-flex align-items-end justify-content-end">
+                <div class="footer-col">
+                    <div class="line">
+                        Powered by Zap.org
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-2 d-flex align-items-end justify-content-end">
+                <div class="footer-col">
+                    <div class="line">
+                        © 2020 BitUnits.com
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        items: 2,
+        margin: 30,
+        responsiveClass: true,
+        dotsEach: 1,
+
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+        }
+    })
+</script>
+<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+<script>
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+    gradientStroke.addColorStop(0, "#80b6f4");
+    gradientStroke.addColorStop(1, "#f49080");
+    var lineChartData = {
+        elements: {
+            line: {
+                tension: 1,
+            },
+        },
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            lineTension: '0.3',
+            label: 'My First dataset',
+            borderColor: 'rgba(85, 126, 190, 0.95)',
+            borderWidth: 2,
+            backgroundColor: '#809ece',
+            fill: true,
+
+            data: [
+                0, 0, 2000, 5000, 10000, 15000, 20000
+            ],
+            pointRadius: 0,
+            yAxisID: 'y-axis-1',
+        }]
+    };
+
+    window.onload = function() {
+
+        window.myLine = Chart.Line(ctx, {
+            data: lineChartData,
+            options: {
+                legend: false,
+                responsive: true,
+                hoverMode: 'index',
+                stacked: false,
+                scales: {
+                    yAxes: [{
+                        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: 'left',
+                        id: 'y-axis-1',
+                    }],
+                    xAxes: [
+                        {
+                            display: false,
+                        }
+                    ]
+                },
+            }
+        });
+    };
+
+
+</script>
+</body>
+</html>
