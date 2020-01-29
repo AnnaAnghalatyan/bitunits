@@ -12,18 +12,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
 </head>
 <body>
-<header>
-    <div class="overlay"></div>
-    <div class="h-100  pl-4 pr-4">
+<header class="h-100 d-flex flex-column justify-content-between">
+
+    <div class="pl-4 pr-4">
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between ">
             <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="logo"></a>
-            <button style="border: none" class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button style="border: none" class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars" style="color: #fff;"></i>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <div class="navbar-collapse justify-content-end collapse" id="navbarSupportedContent" style="">
                 <div class="my-2 my-lg-0 d-flex">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
@@ -45,23 +45,20 @@
                 </div>
             </div>
         </nav>
-        <div class="container h-100 d-flex flex-column justify-content-around">
-            <div class="intro">
-                <h1>Tokenization of Real Estate: Industrial</h1>
-                <p class="intro-txt">Find Your Next Investment.</p>
-            </div>
-            <div class="header-bottom d-flex justify-content-between">
-                <a href="marketplace.html" class="more hovered_arrow">See Token Property<img src="img/arrow-white.svg"> </a>
-                <div class="social">
-                    <a href="#"><i class="fab fa-facebook-f"></i> </a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i> </a>
-                </div>
-            </div>
-        </div>
-
     </div>
-
+    <div class="intro container">
+        <h1>Tokenization of Real Estate: Industrial</h1>
+        <p class="intro-txt">Find Your Next Investment.</p>
+    </div>
+    <div class="header-bottom d-flex justify-content-between container">
+        <a href="marketplace.html" class="more hovered_arrow">See Token Property<img src="img/arrow-white.svg">
+        </a>
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook-f"></i> </a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i> </a>
+        </div>
+    </div>
 </header>
 <section class="section-1 light_bg">
     <div class="container">
@@ -146,7 +143,7 @@
         <div class="container position-relative">
             <div class="container position-absolute"></div>
             <div class="row  text-center">
-                <div class="col-lg-3 col-md-6 mt-lg-0 mt-sm-4 time">
+                <div class="col-lg-3 col-md-6 mt-md-0 mt-4 time">
                     <div class="timeline-item">
                         <div class="timeline-icon">
                             <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
@@ -175,7 +172,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-3 col-md-6 mt-lg-0 mt-sm-4  time text-center">
+                <div class="col-lg-3 col-md-6 mt-md-0 mt-4  time text-center">
                     <div class="timeline-item">
                         <div class="timeline-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38"
@@ -213,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mt-lg-0 mt-sm-4  time text-center">
+                <div class="col-lg-3 col-md-6 mt-md-0 mt-4  time text-center">
                     <div class="timeline-item">
                         <div class="timeline-icon">
                             <svg width="50" height="42" viewBox="0 0 50 42" fill="none"
@@ -228,7 +225,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6  mt-lg-0 mt-sm-4  time text-center">
+                <div class="col-lg-3 col-md-6  mt-md-0 mt-4  time text-center">
                     <div class="timeline-item">
                         <div class="timeline-icon">
                             <svg width="47" height="44" viewBox="0 0 47 44" fill="none"
@@ -253,7 +250,7 @@
                     Free consultation with our agent who will set you up with all you need.
                 </div>
             </div>
-            <div class="col-lg-5 text-lg-right text-center mt-lg-0 mt-5">
+            <div class="col-lg-5 text-lg-right text-md-left text-center mt-lg-0 mt-5">
                 <a class="buy-btn" href="marketplace.html">
                     Go to Marketplace
                 </a>

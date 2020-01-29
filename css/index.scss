@@ -14,7 +14,7 @@ $light_gray: #EEF2F8;
 
 body, html {
   font-family: 'HelveticaNeueCyr', sans-serif;
-  min-height: 100%;
+  height: 100%;
 }
 
 .light_bg {
@@ -336,9 +336,8 @@ header {
     z-index: -1;
   }
 
-  background: url(../img/bg.jpg);
+  background: url(../img/bg.png);
   color: #fff;
-  height: 100vh;
   background-size: cover;
   background-position: center bottom;
 
