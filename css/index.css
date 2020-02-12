@@ -154,6 +154,8 @@ body, html {
     .timeline .timeline-icons .timeline-item .timeline-icon {
       min-height: 44px;
       position: relative; }
+      .timeline .timeline-icons .timeline-item .timeline-icon svg path {
+        transition: 0.1s ease; }
       .timeline .timeline-icons .timeline-item .timeline-icon:after {
         content: "";
         transition: 0.1s ease;
@@ -203,7 +205,7 @@ nav {
   margin-left: 17px !important; }
 
 header {
-  background: url(../img/bg.png);
+  background: url(../img/bg-compressed.jpg);
   color: #fff;
   background-size: cover;
   background-position: center bottom; }

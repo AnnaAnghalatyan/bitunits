@@ -220,6 +220,11 @@ body, html {
       .timeline-icon {
         min-height: 44px;
         position: relative;
+        svg {
+          path {
+            transition: 0.1s ease;
+          }
+        }
         //&:before {
         //  position: absolute;
         //  content: "";
@@ -249,9 +254,7 @@ body, html {
       }
 
       &:hover {
-        .timeline-chechbox {
 
-        }
         .timeline-desc {
           color: $text_blue;
         }
@@ -336,7 +339,7 @@ header {
     z-index: -1;
   }
 
-  background: url(../img/bg.png);
+  background: url(../img/bg-compressed.jpg);
   color: #fff;
   background-size: cover;
   background-position: center bottom;
@@ -777,9 +780,7 @@ footer {
     margin-top: 0;
     font-size: 45px;
   }
-  //.header-desc {
-  //  margin: 0 auto;
-  //}
+
   .team-members {
     margin-top: 50px;
   }
