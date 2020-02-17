@@ -585,6 +585,9 @@ section {
 }
 
 .marketplace {
+  .ap-address {
+    min-height: 69px;
+  }
   .pagination {
     .page-item {
       &.active {
@@ -597,7 +600,7 @@ section {
   }
   .buy-btn {
     font-size: 14px;
-    padding: 5px 15px;
+    padding: 5px 22px;
     min-width: unset;
   }
   .zap-url {
@@ -622,8 +625,9 @@ section {
   }
   .token-header {
     color: #000;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 15px;
+    text-transform: capitalize;
   }
   .token-heading {
     margin-top: 24px;
@@ -687,6 +691,7 @@ section {
     padding: 30px;
     border: 2px solid #CCD1DB;;
     border-radius: 2px;
+    height: 100%;
     .line {
       font-weight: 300;
       font-size: 14px;
@@ -704,23 +709,33 @@ section {
     top: 100px;
   }
   .m-carousel {
+    .counter {
+      position: absolute;
+      /* top: 0; */
+      color: #fff;
+      z-index: 9;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+    }
     touch-action: manipulation;
     .owl-carousel {
-      .owl-dots {
-        position: absolute;
-        bottom: 11px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        .owl-dot {
-          background: #fff;
+      .owl-nav {
+        button {
+          background: transparent;
           border: none;
           outline: none;
-          border-radius: 50%;
-          padding: 2px;
-          margin: 2px;
-          &.active {
-            padding: 3px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          &.owl-prev {
+            left: 10px;
+          }
+          &.owl-next {
+            right: 10px;
           }
         }
       }
@@ -826,6 +841,11 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .marketplace {
+    .m-item {
+      padding: 15px;
+    }
+  }
   .block-desc {
     margin-top: 20px;
   }

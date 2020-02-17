@@ -13,7 +13,7 @@ let data = [
         address: '0x07...b98'
     },
     {
-        name: 'WATCH BALL DROP!! TIME SQUARE VIEWS!! 38TH FLOOR!!',
+        name: 'watch ball drop!! time square views!! 38th floor!!',
         images: ['img/marketplace/block2/1.jpg', 'img/marketplace/block2/2.jpg',
             'img/marketplace/block2/3.jpg', 'img/marketplace/block2/4.jpg',
             'img/marketplace/block2/5.jpg', 'img/marketplace/block2/6.jpg',
@@ -229,7 +229,9 @@ let templateCreator = (blockItem) => {
                                 <div class="m-carousel">
                                     <div class="owl-carousel">
                                        ${carouselItem(blockItem.images)}
+                                       
                                     </div>
+                                    <div class="counter"></div>
                                 </div>
                             </div>
                         </div>
@@ -256,26 +258,6 @@ let templateCreator = (blockItem) => {
                                 <div class="zap-count mt-2">
                                     1
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3 mb-3">
-                            <div class="col-6">
-                                <div class="line">
-                                    <span class="sizing">Address: </span>
-                                    <span class="pricing">${blockItem.address}</span>
-                                </div>
-                                <div class="line">
-                                    <span class="pricing">
-                                        0 wel Zap
-                                    </span>
-                                </div>
-                                <div class="line">
-                                    <span class="pricing">
-                                        0.011 ETH
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-6">
                                 <div class="line">
                                     <span class="pricing">
                                         10000 gwel ZAP needed
@@ -283,8 +265,27 @@ let templateCreator = (blockItem) => {
                                 </div>
                             </div>
                         </div>
+                        <div class="row mt-3 mb-3">
+                            <div class="col-12">
+                                <div class="line ap-address">
+                                    <span class="sizing">Address: </span>
+                                    <span class="pricing">${blockItem.address}</span>
+                                </div>
+                                <div class="line mt-2">
+                                    <span class="sizing">
+                                        0 wel Zap
+                                    </span>
+                                </div>
+                                <div class="line">
+                                    <span class="sizing">
+                                        0.011 ETH
+                                    </span>
+                                </div>
+                            </div>
+                           
+                        </div>
                         <div class="row">
-                            <div class="col-12 d-flex flex-wrap justify-content-md-between justify-content-start">
+                            <div class="col-12 mt-4 d-flex flex-wrap justify-content-md-between justify-content-start">
                                 <a class="buy-btn mb-2 mr-1">
                                     Approve
                                 </a>
@@ -301,7 +302,7 @@ let templateCreator = (blockItem) => {
                         </div>
                     </div>
                 </div>`
-}
+};
 
 //creating pagination
 let startpage = 1;
@@ -331,13 +332,37 @@ function Init(arr) {
     mp_root.innerHTML = res;
 
     $('.owl-carousel').owlCarousel({
+        startPosition: 0,
         items: 1,
-        loop: true,
+        loop: false,
         margin: 30,
         responsiveClass: true,
         dotsEach: 1,
+        nav: true,
+        navText: ['<svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '<path fill-rule="evenodd" clip-rule="evenodd" d="M10.2856 16.4228L2.73893 8.99999L10.2856 1.57713L9.11993 0.428558L0.428501 9.00427L9.11993 17.5714L10.2856 16.4228Z" fill="white"/>\n' +
+        '</svg>\n', '<svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '<path fill-rule="evenodd" clip-rule="evenodd" d="M0.714355 16.4228L8.26107 8.99999L0.714355 1.57713L1.88007 0.428558L10.5715 9.00427L1.88007 17.5714L0.714355 16.4228Z" fill="white"/>\n' +
+        '</svg>\n'],
+        dots: false,
+        onInitialized  : counter, //When the plugin has initialized.
+        onTranslated : counter
 
     });
+
+    function counter(event) {
+        var element   = event.target;         // DOM element, in this example .owl-carousel
+
+        var items     = event.item.count;     // Number of items
+        var item      = event.item.index + 1;     // Position of the current item
+
+        // it loop is true then reset counter from 1
+        if(item > items) {
+            item = item - items
+        }
+        console.log(items, item);
+        element.closest('.m-carousel').querySelector('.counter').innerHTML =item+" / "+items
+    }
 
     var collection = document.querySelectorAll('.graph-block canvas');
     var lineChartData = {
