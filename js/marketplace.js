@@ -198,15 +198,15 @@ let carouselItem = (arr) => {
     let res = '';
     arr.forEach(src => {
         res += `<div class="item">
-           <div class="overlay"></div>
-            <img src="${src}">
+           <!--<div class="overlay"></div>-->
+           <a data-fancybox="images" href="${src}"> <img src="${src}"></a>
             </div>`
     });
     return res;
 };
 
 // one block item creating
-let templateCreator = (blockItem) => {
+let templateCreator = (blockItem, index) => {
     return `<div class="col-lg-6 mt-4">
                     <div class="m-item">
                         <div class="row mb-3">
@@ -227,7 +227,7 @@ let templateCreator = (blockItem) => {
                             </div>
                             <div class="col-12">
                                 <div class="m-carousel">
-                                    <div class="owl-carousel">
+                                    <div class="owl-carousel owl${index}">
                                        ${carouselItem(blockItem.images)}
                                        
                                     </div>
@@ -326,11 +326,24 @@ document.getElementById('mp-pagination').innerHTML = Pagination();
 function Init(arr) {
     let showData = arr.slice((startpage - 1) * itemPerPage, startpage * itemPerPage);
     let res = '';
-    showData.forEach(block => {
-        res += templateCreator(block)
+    showData.forEach((block, index) => {
+        res += templateCreator(block, index)
+        $().fancybox({
+            selector : `.owl${index} .owl-item:not(.cloned) a`,
+            hash   : false,
+            thumbs : {
+                autoStart : true
+            },
+            buttons : [
+                'close'
+            ]
+        });
     });
     mp_root.innerHTML = res;
+    function fancyBox(e) {
+        console.log(e.target);
 
+    }
     $('.owl-carousel').owlCarousel({
         startPosition: 0,
         items: 1,
@@ -345,10 +358,15 @@ function Init(arr) {
         '<path fill-rule="evenodd" clip-rule="evenodd" d="M0.714355 16.4228L8.26107 8.99999L0.714355 1.57713L1.88007 0.428558L10.5715 9.00427L1.88007 17.5714L0.714355 16.4228Z" fill="white"/>\n' +
         '</svg>\n'],
         dots: false,
-        onInitialized  : counter, //When the plugin has initialized.
+        onInitialize: fancyBox,
+        onInitialized  : counter,//When the plugin has initialized.
         onTranslated : counter
 
     });
+
+
+
+
 
     function counter(event) {
         var element   = event.target;         // DOM element, in this example .owl-carousel
@@ -360,7 +378,6 @@ function Init(arr) {
         if(item > items) {
             item = item - items
         }
-        console.log(items, item);
         element.closest('.m-carousel').querySelector('.counter').innerHTML =item+" / "+items
     }
 
@@ -423,6 +440,7 @@ function Init(arr) {
             options: options
         });
     }
+
 }
 
 //initializing first page call

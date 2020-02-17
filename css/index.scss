@@ -764,10 +764,24 @@ footer {
   color: #CCD1DB;
   background: $blue;
   padding: 59px 0;
+  a {
+    color: #CCD1DB;
+    transition: 0.2s ease;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 
   .social {
     a {
       color: #CCD1DB;
+      text-decoration: none;
+      transition: 0.2s ease;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 
